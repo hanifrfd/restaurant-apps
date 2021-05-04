@@ -1,4 +1,4 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Restaurant Apps Starter Project</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="./main.css"></head><body><nav><h5>HUNGRY APP</h5><div id="drawer"><ul><div class="menu"><li><a href="/">Home</a></li><li><a href="#">Favorite</a></li><li><a href="#">About Us</a></li></div></ul></div><a id="hamburger" href="#">☰</a></nav><div class="jumbotron"><h5>FIND YOUR<br>FAVORITE RESTAURANT</h5><div class="blur"></div></div><main><h3>Explore Restaurant</h3><div id="list"></div></main><footer>Copyright © 2021 - Hungry App</footer><script>const hamburgerButtonElement = document.querySelector("#hamburger");
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Restaurant Apps Starter Project</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="./main.css"></head><body><nav><h6>HUNGRY APP</h6><div id="drawer"><ul><li><a href="/">Home</a></li><li><a href="#">Favorite</a></li><li><a href="#">About Us</a></li></ul></div><a id="hamburger" href="#">☰</a></nav><div class="jumbotron"><h6>FIND YOUR<br>FAVORITE RESTAURANT</h6><div class="blur"></div></div><main><h5>Explore Restaurant</h5><div id="list"></div></main><footer>Copyright © 2021 - Hungry App</footer><script>const hamburgerButtonElement = document.querySelector("#hamburger");
     const drawerElement = document.querySelector("#drawer");
     const mainElement = document.querySelector("main");
     
@@ -20,9 +20,9 @@
                 var img = document.createElement("img");
                 var card = document.createElement("DIV");
                 var cardInfo = document.createElement("DIV");
-                var title = document.createElement("h3");
-                var rating = document.createElement("h5");
-                var city = document.createElement("h5");
+                var title = document.createElement("h6");
+                var rating = document.createElement("span");
+                var city = document.createElement("span");
                 var description = document.createElement("p");
                             
                 card.setAttribute("class", "card");
