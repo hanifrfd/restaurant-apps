@@ -7,7 +7,8 @@
 
 html, body, main ,footer{
     height: auto;
-    width: 100%;    
+    width: 100%;
+    max-width: 100%;
 }
 
 body{
@@ -67,13 +68,16 @@ nav{
     top: 0;
     right: 0;
     z-index: 3;
-    transform: translate(450px, 0);
+    transform: translate(80vw, 0);
     transition: transform 0.3s ease-in-out;
     background-color:rgb(255, 255, 255);
+    visibility: hidden;
 }
 
 #drawer.open {
-    transform: translate(0,0)
+    transform: translate(0,0);
+    visibility: visible;
+
 }
 
 #drawer > ul {
@@ -87,7 +91,7 @@ nav{
     margin-bottom: 16px;
 }
 
-#drawer > a {
+#drawer > li > a {
     text-decoration: none;
     color: black;
     font-size: 1rem;
@@ -110,7 +114,7 @@ nav{
     position: relative;
 }
 
-.jumbotron > h6{
+.jumbotron > h5{
     text-align: center;
     position: relative;
     z-index: 1;
@@ -132,7 +136,7 @@ main{
 
 main > h5:first-child {
     text-align: center;
-    padding: 24px 0px;
+    padding: 28px 0px;
 }
 
 #list{            
@@ -167,7 +171,7 @@ main > h5:first-child {
     margin-right: 16px;    
 }            
 .cardInfo > span:last-child{
-    color: rgb(253, 187, 63);    
+    color: rgb(80, 102, 0);    
 }             
 .card > p{
     overflow: hidden;    
@@ -185,8 +189,9 @@ main > h5:first-child {
     background-size: cover;
     height:auto;
     width:100%;
-    min-height: 20vh;
-    max-height: 20vh;
+    min-height: 18vh;
+    max-height: 18vh;
+    border-radius: 3px 3px 0px 0px;
 }  
 
 footer{
