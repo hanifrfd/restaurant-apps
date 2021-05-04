@@ -1,0 +1,45 @@
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Restaurant Apps Starter Project</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="./main.css"></head><body><nav><h5>HUNGRY APP</h5><div id="drawer"><ul><div class="menu"><li><a href="/">Home</a></li><li><a href="#">Favorite</a></li><li><a href="#">About Us</a></li></div></ul></div><a id="hamburger" href="#">☰</a></nav><div class="jumbotron"><h5>FIND YOUR<br>FAVORITE RESTAURANT</h5><div class="blur"></div></div><main><h3>Explore Restaurant</h3><div id="list"></div></main><footer>Copyright © 2021 - Hungry App</footer><script>const hamburgerButtonElement = document.querySelector("#hamburger");
+    const drawerElement = document.querySelector("#drawer");
+    const mainElement = document.querySelector("main");
+    
+    hamburgerButtonElement.addEventListener("click", event => {
+        drawerElement.classList.toggle("open");
+        event.stopPropagation();
+    });
+    
+    
+    mainElement.addEventListener("click", event => {
+        drawerElement.classList.remove("open");
+        event.stopPropagation();
+    })
+
+    fetch('./DATA.json')
+        .then(response => response.json())
+        .then(data => {
+            data.restaurants.map((items) => {                
+                var img = document.createElement("img");
+                var card = document.createElement("DIV");
+                var cardInfo = document.createElement("DIV");
+                var title = document.createElement("h3");
+                var rating = document.createElement("h5");
+                var city = document.createElement("h5");
+                var description = document.createElement("p");
+                            
+                card.setAttribute("class", "card");
+                cardInfo.setAttribute("class", "cardInfo");
+
+                img.setAttribute("src", items.pictureId);                
+                
+                title.innerHTML = items.name;
+                city.innerHTML = items.city;
+                rating.innerHTML = items.rating;
+                description.innerHTML = items.description;
+
+                cardInfo.innerHTML += city.outerHTML + rating.outerHTML;
+                card.innerHTML += img.outerHTML + cardInfo.outerHTML + title.outerHTML  + description.outerHTML;
+                
+                document.getElementById("list").appendChild(card);
+                
+            })
+        })
+        .catch(error => console.log(error));</script><script src="bundle.js"></script></body></html>
