@@ -2,13 +2,12 @@
     padding: 0px;
     margin: 0px;     
     font-family: 'Lato', sans-serif;        
-    box-sizing: border-box;           
+    box-sizing: border-box;
 }
 
 html, body, main ,footer{
     height: auto;
-    width: 100%;
-    max-width: 100%;
+    width: 100%;        
 }
 
 body{
@@ -62,7 +61,7 @@ nav{
 #drawer {
     padding: 16px 30px;
     font-weight: 300;
-    width: 250px;
+    width: 180px;
     height: 100%;
     position: absolute;
     top: 0;
@@ -77,7 +76,6 @@ nav{
 #drawer.open {
     transform: translate(0,0);
     visibility: visible;
-
 }
 
 #drawer > ul {
@@ -87,11 +85,11 @@ nav{
     justify-content: space-between;    
 }
 
-#drawer > li {
+#drawer > ul > li {
     margin-bottom: 16px;
 }
 
-#drawer > li > a {
+#drawer > ul > li > a {
     text-decoration: none;
     color: black;
     font-size: 1rem;
@@ -171,7 +169,7 @@ main > h5:first-child {
     margin-right: 16px;    
 }            
 .cardInfo > span:last-child{
-    color: rgb(80, 102, 0);    
+    color: rgb(248, 177, 46);    
 }             
 .card > p{
     overflow: hidden;    
@@ -209,35 +207,28 @@ footer{
         width: auto;
         position: relative;
         transform: translate(0, 0);        
-    }
-    
-    #hamburger {
-        display: none;
-    }
-
-    #drawer{
         padding: 8px 30px;
         font-weight: 300;
+        visibility:visible;
     }
-    
+
     #drawer > ul {
         display:flex;        
         list-style: none;
         justify-content: space-between;
         align-items: center;
     }        
-    .menu, .cardInfo{
-        display:flex;
-        flex-direction:row;
+
+    #drawer > ul {        
+        flex-direction: row;        
     }
-    .menu > li {            
-        padding-left: 20px;        
-    }
-    .menu > li > a {
-        text-decoration: none;
-        color: black;
-    }
+
     
+    
+    #hamburger {
+        display: none;
+    }
+                
     .jumbotron {
         background:url(/images/heros/hero-image_2.jpg);
         min-height: 30vw;
