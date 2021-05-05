@@ -1,15 +1,19 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Restaurant Apps Starter Project</title><meta name="viewport" content="width=device-width,initial-scale=1.5"><link rel="stylesheet" href="./main.css"></head><body><nav><div class="logo">HUNGRY APP</div><div id="drawer"><ul><li>HUNGRY APP</li><li><a href="/">Home</a></li><li><a href="#">Favorite</a></li><li><a href="#">About Us</a></li></ul></div><a id="hamburger" href="#">☰</a></nav><div class="jumbotron"><div class="jumbo-text">FIND YOUR<br>FAVORITE RESTAURANT</div><div class="blur"></div></div><main><div class="headline">Explore Restaurant</div><div id="list"></div></main><footer>Copyright © 2021 - Hungry App</footer><script>const hamburgerButtonElement = document.querySelector("#hamburger");
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Restaurant Apps Starter Project</title><meta name="viewport" content="width=device-width,initial-scale=1.5"><link rel="stylesheet" href="./main.css"></head><body><nav><div class="logo">HUNGRY APP</div><div id="drawer"><ul><li>HUNGRY APP</li><li><a href="/">Home</a></li><li><a href="#">Favorite</a></li><li><a href="#">About Us</a></li></ul></div><a id="hamburger" href="#">☰</a></nav><div id="backdrop"></div><div class="jumbotron"><div class="jumbo-text">FIND YOUR<br>FAVORITE RESTAURANT</div><div class="blur"></div></div><main><div class="headline">Explore Restaurant</div><div id="list"></div></main><footer>Copyright © 2021 - Hungry App</footer><script>const hamburgerButtonElement = document.querySelector("#hamburger");
     const drawerElement = document.querySelector("#drawer");
+    const backdrop = document.querySelector("#backdrop");
     const mainElement = document.querySelector("main");
     
     hamburgerButtonElement.addEventListener("click", event => {
-        drawerElement.classList.toggle("open");
+        // drawerElement.classList.toggle("open");
+        drawerElement.style.width = "180px";
+        backdrop.style.display = "block";
         event.stopPropagation();
     });
-    
-    
-    mainElement.addEventListener("click", event => {
-        drawerElement.classList.remove("open");
+        
+    backdrop.addEventListener("click", event => {
+        // drawerElement.classList.remove("open");
+        drawerElement.style.width = "0";
+        backdrop.style.display = "none";
         event.stopPropagation();
     })
 
