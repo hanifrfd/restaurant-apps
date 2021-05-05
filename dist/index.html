@@ -1,17 +1,15 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Restaurant Apps Starter Project</title><meta name="viewport" content="width=device-width,initial-scale=1.5"><link rel="stylesheet" href="./main.css"></head><body><nav><div class="logo">HUNGRY APP</div><div id="drawer"><ul><li>HUNGRY APP</li><li><a href="/">Home</a></li><li><a href="#">Favorite</a></li><li><a href="#">About Us</a></li></ul></div><a id="hamburger" href="#">☰</a></nav><div id="backdrop"></div><div class="jumbotron"><div class="jumbo-text">FIND YOUR<br>FAVORITE RESTAURANT</div><div class="blur"></div></div><main><div class="headline">Explore Restaurant</div><div id="list"></div></main><footer>Copyright © 2021 - Hungry App</footer><script>const hamburgerButtonElement = document.querySelector("#hamburger");
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Restaurant Apps Starter Project</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="./main.css"></head><body><a href="#maincontent" class="skip-link">Menuju ke konten</a><nav><div class="logo">HUNGRY APP</div><a id="hamburger" href="#">☰</a><div id="drawer"><ul><li class="logo">HUNGRY APP</li><li><a href="/">Home</a></li><li><a href="#">Favorite</a></li><li><a href="https://github.com/hanifrfd">About Us</a></li></ul></div></nav><div id="backdrop"></div><div class="jumbotron"><div class="jumbo-text">FIND YOUR<br>FAVORITE RESTAURANT</div><div class="blur"></div></div><main id="maincontent"><div class="headline">Explore Restaurant</div><div id="list"></div></main><footer>Copyright © 2021 - Hungry App</footer><script>const hamburgerButtonElement = document.querySelector("#hamburger");
     const drawerElement = document.querySelector("#drawer");
     const backdrop = document.querySelector("#backdrop");
     const mainElement = document.querySelector("main");
     
-    hamburgerButtonElement.addEventListener("click", event => {
-        // drawerElement.classList.toggle("open");
+    hamburgerButtonElement.addEventListener("click", event => {        
         drawerElement.style.width = "180px";
         backdrop.style.display = "block";
         event.stopPropagation();
     });
         
-    backdrop.addEventListener("click", event => {
-        // drawerElement.classList.remove("open");
+    backdrop.addEventListener("click", event => {        
         drawerElement.style.width = "0";
         backdrop.style.display = "none";
         event.stopPropagation();
@@ -20,7 +18,7 @@
     fetch('./DATA.json')
         .then(response => response.json())
         .then(data => {
-            data.restaurants.map((items) => {                
+            data.restaurants.map((items) => {                      
                 var img = document.createElement("img");
                 var card = document.createElement("div");
                 var cardInfo = document.createElement("div");
@@ -34,6 +32,7 @@
                 title.setAttribute("class", "cardTitle");
 
                 img.setAttribute("src", items.pictureId);
+                img.setAttribute("alt", items.name)
                 
                 title.innerHTML = items.name;
                 city.innerHTML = items.city;
