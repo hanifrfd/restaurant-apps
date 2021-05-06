@@ -37,8 +37,8 @@ nav{
     display:flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 16px;
-    font-size: 1rem;    
+    padding: 4px 6px 4px 16px;
+    font-size: 1.2rem;    
 }
 
 #backdrop{
@@ -54,7 +54,8 @@ nav{
 
 #hamburger {    
     text-decoration: none;
-    color: black;
+    color: black; 
+    padding: 14px 16px;   
 }
 
 #drawer {    
@@ -84,13 +85,14 @@ nav{
 
 #drawer > ul > li {    
     margin-bottom: 16px;
-    margin-left: 30px;
-    padding: 4px;
+    margin-left: 30px;    
+    padding: 0px;
 }
 
 #drawer > ul > li > a {
     text-decoration: none;
     color: black;    
+    padding: 14px;
 }
 #drawer > ul > li > a:hover{
     color: #81b214;
@@ -153,11 +155,11 @@ main > .headline {
 .card{
     display: flex;
     flex-direction: column;
-    margin-bottom: 28px;
+    margin-bottom: 30px;
     max-width: 48%;                     
 }
 
-.card > .cardInfo,.cardTitle{
+.card > .cardInfo{
     padding: 4px 4px;    
 }
 
@@ -166,6 +168,14 @@ main > .headline {
     font-size: 0.625rem;
     font-weight: 500;
     margin-top: 4px;
+}
+
+.cardTitle{    
+    font-weight: bold;
+    text-decoration: none;
+    color: inherit;
+    font-size: 1rem;
+    padding: 14.5px 4px 14.5px 4px;
 }
 
 .cardInfo > span:first-child{
@@ -213,7 +223,8 @@ footer{
     }
 
     nav{
-        padding: 6px 70px;
+        font-size: 1rem;
+        padding: 14px 50px 14px 70px;
     }
 
     #drawer {
@@ -239,8 +250,7 @@ footer{
 
     #drawer > ul > li{
         margin-left: 6px;
-        margin-bottom: 0px;
-        padding: 10px;
+        margin-bottom: 0px;        
     }        
         
     .jumbotron {                
@@ -268,7 +278,7 @@ footer{
         max-height: 24vh;        
     }
     
-    .card > .cardInfo,.cardTitle{
+    .card > .cardInfo{
         padding: 8px 10px;        
     }
 
@@ -282,8 +292,11 @@ footer{
     }
 
     .cardTitle{
-        font-size: 1.2rem;
+        font-size: 1rem;
         font-weight: bold;
+        text-decoration: none;
+        color: inherit;
+        padding: 10px 10px 18px 10px;
     }
     footer{
         padding: 16px 110px;
@@ -298,14 +311,13 @@ footer{
     }
 
     nav{
-        padding: 6px 110px;
+        padding: 16px 110px;              
     }
 
     #drawer {
         width: auto;
         position: relative;            
-        transition: transform none;
-        
+        transition: transform none;        
         font-weight: 400;        
     }
 
@@ -323,9 +335,9 @@ footer{
     }             
 
     #drawer > ul > li{        
-        margin-bottom: 0px;
-        padding: 10px;
-    }        
+        margin-bottom: 0px;        
+        overflow:hidden;
+    }            
         
     .jumbotron {                
         min-height: 30vw;        
@@ -352,7 +364,7 @@ footer{
         max-height: 34vh;        
     }
     
-    .card > .cardInfo,.cardTitle{
+    .card > .cardInfo{
         padding: 8px 10px;        
     }
 
@@ -366,8 +378,9 @@ footer{
     }
 
     .cardTitle{
-        font-size: 1.2rem;
-        font-weight: bold;
+        font-size: 1.45rem;
+        font-weight: bold;        
+        padding: 4px 10px 14px 10px;
     }
     footer{
         padding: 16px 110px;

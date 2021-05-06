@@ -22,14 +22,16 @@
                 var img = document.createElement("img");
                 var card = document.createElement("div");
                 var cardInfo = document.createElement("div");
-                var title = document.createElement("div");
+                var title = document.createElement("a");
                 var rating = document.createElement("span");
                 var city = document.createElement("span");
                 var description = document.createElement("p");
                             
                 card.setAttribute("class", "card");
                 cardInfo.setAttribute("class", "cardInfo");
+                title.setAttribute("href", "#");
                 title.setAttribute("class", "cardTitle");
+                
 
                 img.setAttribute("src", items.pictureId);
                 img.setAttribute("alt", items.name)
