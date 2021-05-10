@@ -1,21 +1,6 @@
-<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Restaurant Apps Starter Project</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="./main.css"></head><body><a href="#maincontent" class="skip-link">Menuju ke konten</a><nav><div class="logo">HUNGRY APP</div><a id="hamburger" href="#">☰</a><div id="drawer"><ul><li class="logo">HUNGRY APP</li><li><a href="/">Home</a></li><li><a href="#">Favorite</a></li><li><a href="https://github.com/hanifrfd">About Us</a></li></ul></div></nav><div id="backdrop"></div><div class="jumbotron"><div class="jumbo-text">FIND YOUR<br>FAVORITE RESTAURANT</div><div class="blur"></div></div><main id="maincontent"><div class="headline">Explore Restaurant</div><div id="list"></div></main><footer>Copyright © 2021 - Hungry App</footer><script>const hamburgerButtonElement = document.querySelector("#hamburger");
-    const drawerElement = document.querySelector("#drawer");
-    const backdrop = document.querySelector("#backdrop");
-    const mainElement = document.querySelector("main");
-    
-    hamburgerButtonElement.addEventListener("click", event => {        
-        drawerElement.style.width = "180px";
-        backdrop.style.display = "block";
-        event.stopPropagation();
-    });
-        
-    backdrop.addEventListener("click", event => {        
-        drawerElement.style.width = "0";
-        backdrop.style.display = "none";
-        event.stopPropagation();
-    })
-
-    fetch('./DATA.json')
+<!doctype html><html lang="en"><head><meta charset="UTF-8"><title>Restaurant Apps Starter Project</title><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="./styles/main.css"><style>.jumbotron{
+            background:url(/images/heros/hero-image_2.jpg);
+        }</style></head><body><a href="#maincontent" class="skip-link">Menuju ke konten</a><nav><div class="logo">HUNGRY APP</div><a id="hamburger" href="#">☰</a><div id="drawer"><ul><li class="logo">HUNGRY APP</li><li><a href="/">Home</a></li><li><a href="#">Favorite</a></li><li><a href="https://github.com/hanifrfd">About Us</a></li></ul></div></nav><div id="backdrop"></div><div class="jumbotron"><div class="jumbo-text">FIND YOUR<br>FAVORITE RESTAURANT</div><div class="blur"></div></div><main id="maincontent"><div class="headline">Explore Restaurant</div><div id="list"></div></main><footer>Copyright © 2021 - Hungry App</footer><script src="../scripts/drawer.js"></script><script>fetch('https://restaurant-api.dicoding.dev/list')
         .then(response => response.json())
         .then(data => {
             data.restaurants.map((items) => {                      
@@ -29,11 +14,11 @@
                             
                 card.setAttribute("class", "card");
                 cardInfo.setAttribute("class", "cardInfo");
-                title.setAttribute("href", "#");
+                title.setAttribute("href", "detail.html?restaurant="+items.id);
                 title.setAttribute("class", "cardTitle");
                 
 
-                img.setAttribute("src", items.pictureId);
+                img.setAttribute("src", "https://restaurant-api.dicoding.dev/images/medium/"+items.pictureId);
                 img.setAttribute("alt", items.name)
                 
                 title.innerHTML = items.name;

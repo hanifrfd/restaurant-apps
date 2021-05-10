@@ -1,0 +1,63 @@
+.restaurant{
+    margin-top: 24px;
+    
+}
+.rest-head{
+    display:flex;
+    justify-content:space-between;    
+    
+    margin-bottom: 24px;
+}
+.sub-title{
+    display: flex;
+    justify-content: space-between;
+}
+
+.description, .sub-title > .rating, .kategori, .alamat{
+    display: flex;
+    flex-direction: column; 
+    margin-bottom: 24px;   
+}
+.description{
+    line-height: 1.8;
+}
+
+.rest-title{
+    display: flex;
+    align-items: center;
+}
+.rest-title > .name {    
+    font-size: 1.5rem;    
+}
+
+.like > button {
+    color: #206a5d;
+    background-color: inherit;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+label{
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.menu-list{
+    margin-top: 8px;
+}
+
+.menu-list{
+    display: flex;
+    margin-top: 16px;
+    justify-content: space-around;
+}
+.makanan > label{
+    margin-bottom: 24px;    
+}
+
+.makanan > li , .minuman > li {
+    margin-bottom: 8px;
+}
