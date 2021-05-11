@@ -17,7 +17,7 @@
             <ul>           
                 <li class="logo">HUNGRY APP</li>
                 <li><a href="/">Home</a></li>
-                <li><a href="#">Favorite</a></li>
+                <li><a href="favorite.html">Favorite</a></li>
                 <li><a href="https://github.com/hanifrfd">About Us</a></li>                
             </ul>
         </div>
@@ -27,23 +27,19 @@
     <div class="jumbotron">            
         <div class="blur"></div>
     </div>
+    
 <main id="maincontent">    
+    
     <div class="restaurant">
         <div class="rest-head">
             <div class="rest-title">
                 <div class="name"></div>                
-            </div>
-            <div class="like">
-                <button>Like</button>
-            </div>                        
+            </div>            
         </div>        
         <div class="sub-title">
             <div class="rating">
                 <label for="rating">Rating</label>
-            </div>
-            <div class="kategori">
-                <label for="kategori">Kategori</label>
-            </div>
+            </div>            
             <div class="alamat">
                 <label for="Address">Address</label>
             </div>
@@ -52,7 +48,9 @@
             <label for="description">Description</label>
         </div>
         <div class="menu">
-            <label for="Menu">Menu</label>
+            <div class="kategori">
+                <label for="kategori">Kategori Makanan</label>
+            </div>            
             <div class="menu-list">
                 <ul class="makanan">
                     <label for="Makanan">Makanan</label>
@@ -62,13 +60,19 @@
                 </ul>
             </div>
         </div>
-        <div class="reviews"></div>        
-    </div>
+        <div class="reviews">
+            <label for="Review">Customer Review</label>
+        </div>        
+    </div>    
 </main>
 
 <footer>
     Copyright © 2021 - Hungry App
 </footer>    
+
+<div class="favorite">
+    <button>Favorite</button>
+</div>
 
 <script src="../scripts/drawer.js"></script>
 <script>    
@@ -82,15 +86,15 @@
         .then(response => response.json())
         .then(data => {            
             
-            document.getElementsByClassName("jumbotron")[0].style.background = 'url(https://restaurant-api.dicoding.dev/images/large/'+ data.restaurant.pictureId+')';
+            document.getElementsByClassName("jumbotron")[0].style.background = 'url(https://restaurant-api.dicoding.dev/images/medium/'+ data.restaurant.pictureId+')';
 
             document.getElementsByClassName("name")[0].innerHTML+=data.restaurant.name;
             document.getElementsByClassName("rating")[0].innerHTML+=data.restaurant.rating;
             document.getElementsByClassName("alamat")[0].innerHTML+=data.restaurant.address;
             document.getElementsByClassName("description")[0].innerHTML+=data.restaurant.description;
 
-            data.restaurant.categories.map((categories) => {
-                document.getElementsByClassName("kategori")[0].innerHTML += categories.name;
+            data.restaurant.categories.map((categories) => {                                
+                document.getElementsByClassName("kategori")[0].innerHTML += categories.name+",";
             })
 
             data.restaurant.menus.foods.map((foods) => {
@@ -103,6 +107,20 @@
                 var list = document.createElement("li");
                 list.innerHTML = drinks.name;
                 document.getElementsByClassName("minuman")[0].innerHTML += list.outerHTML;
+            })
+
+            data.restaurant.customerReviews.map((reviews) => {
+                var reviewer = document.createElement("label");
+                var review = document.createElement("p");
+                var box = document.createElement("div");
+                box.setAttribute("class", "review-box");
+
+                reviewer.innerHTML = reviews.name;
+                review.innerHTML = reviews.review;                
+
+                box.innerHTML += reviewer.outerHTML + review.outerHTML;
+
+                document.getElementsByClassName("reviews")[0].innerHTML += box.outerHTML;
             })
 
             console.log(data.restaurant);

@@ -10,7 +10,7 @@ html{
     max-width: 100%;
     height: auto;
     overflow-x: hidden;
-    font-size: 12px;        
+    font-size: 14px;        
 }
 
 .skip-link {
@@ -30,7 +30,7 @@ html{
 .logo{
     font-family: "Helvetica Neue", sans-serif;
     font-weight: 900;
-    color: #81b214;
+    color: rgb(0, 177, 79);
 }
 
 nav{
@@ -102,13 +102,12 @@ nav{
     outline: 4px solid #81b214;
 }
 
-
 .jumbotron {    
     overflow:hidden;
     min-height: 40vw;
     max-width: 100%;
-    background-size: cover;
-        
+    background-size:cover;
+    
     display: flex;
     align-items: center;            
     justify-content: center;

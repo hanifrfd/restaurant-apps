@@ -1,25 +1,29 @@
 .restaurant{
-    margin-top: 24px;
-    
+    margin-top: 24px;    
 }
 .rest-head{
     display:flex;
-    justify-content:space-between;    
-    
-    margin-bottom: 24px;
+    justify-content:space-between;        
+    margin-bottom: 32px;
 }
 .sub-title{
-    display: flex;
-    justify-content: space-between;
+    display: flex;    
 }
 
-.description, .sub-title > .rating, .kategori, .alamat{
+.rating, .makanan{
+    margin-right: 42px;
+}
+.rating:not(:first-child){
+    color: #F99C04;
+}
+
+.description, .menu, .reviews, .sub-title > .rating, .kategori, .alamat{
     display: flex;
     flex-direction: column; 
-    margin-bottom: 24px;   
+    margin-bottom: 32px;   
 }
 .description{
-    line-height: 1.8;
+    line-height: 2;
 }
 
 .rest-title{
@@ -27,22 +31,45 @@
     align-items: center;
 }
 .rest-title > .name {    
-    font-size: 1.5rem;    
+    font-size: 1.4rem;   
+    font-weight: bold; 
 }
 
-.like > button {
-    color: #206a5d;
-    background-color: inherit;
-    padding: 8px 20px;
+.favorite{
+    position: fixed;
+    bottom:20px;
+    right:15px;
+}
+
+@media (min-width: 700px){
+    .favorite{
+        position: fixed;    
+        right:50px;
+    }   
+}
+
+@media (min-width: 1000px){
+    .favorite{
+        position: fixed;    
+        right:110px;
+    }   
+}
+
+.favorite > button {
+    /* color: #81b214;
+    background-color: inherit; */
+    background-color: rgb(0, 177, 79);
+    color: white;
+    padding: 14px 40px;
     border: none;
-    border-radius: 5px;
-    font-weight: bold;
+    border-radius: 100px;
+    font-weight: normal;
 }
 
 label{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
-    margin-bottom: 8px;
+    margin-bottom: 16px;    
 }
 
 .menu-list{
@@ -51,13 +78,22 @@ label{
 
 .menu-list{
     display: flex;
-    margin-top: 16px;
-    justify-content: space-around;
-}
-.makanan > label{
-    margin-bottom: 24px;    
+    margin-top: 16px;    
 }
 
 .makanan > li , .minuman > li {
-    margin-bottom: 8px;
+    margin: 16px 0px;
+}
+
+.review-box{
+    margin-bottom: 24px;
+}
+
+.review-box > label{
+    color: rgb(117, 117, 117);
+}
+
+.review-box > p{
+    margin-top: 16px;
+    padding-left: 16px;
 }
