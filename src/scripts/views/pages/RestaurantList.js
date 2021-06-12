@@ -3,12 +3,26 @@ import RestaurantDB from '../../data/restaurantDb';
 import { restaurantItemTemplate, jumbotronTemplate } from '../templates/template-creator';
 
 const RestaurantList = {
+
+  async loader() {
+    return `
+      <div id="mainContent">
+        <div id="loading"></div>
+      </div>
+    `;
+  },
+
   async render() {
     return `
-        <div id="mainContent">
+        
+        <div id="mainContent" class="display">
           <div class="jumbo"></div>
           <div class="headline">Explore Restaurant</div>                  
-          <div id="list"></div>
+          <div id="list">
+            <div id="loading">
+              <img src="/loader.gif" width="100" height="100" alt="loader"/>
+            </div>
+          </div>
         </div>                
       `;
   },
@@ -21,9 +35,12 @@ const RestaurantList = {
     console.log(restaurant);
     const restaurantContainer = document.querySelector('#list');
 
-    restaurant.restaurants.forEach((items) => {
-      restaurantContainer.innerHTML += restaurantItemTemplate(items);
-    });
+    setTimeout(() => {
+      document.querySelector('#loading').classList.add('hidden');
+      restaurant.restaurants.forEach((items) => {
+        restaurantContainer.innerHTML += restaurantItemTemplate(items);
+      });
+    }, 2500);
   },
 };
 

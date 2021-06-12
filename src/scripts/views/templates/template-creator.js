@@ -87,9 +87,12 @@ const createFavdButtonTemplates = () => `
     </button>
 `;
 
-// eslint-disable-next-line import/prefer-default-export
+const createLoader = () => `
+    <div id='loading'></div>
+`;
+
 export {
-  restaurantItemTemplate, jumbotronTemplate, restaurantDetailTemplate, createFavButtonTemplates, createFavdButtonTemplates,
+  restaurantItemTemplate, jumbotronTemplate, restaurantDetailTemplate, createFavButtonTemplates, createFavdButtonTemplates, createLoader,
 };
 
 // eslint-disable-next-line max-len

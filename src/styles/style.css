@@ -45,6 +45,7 @@ body{
     font-family: "Helvetica Neue", sans-serif;
     font-weight: 900;
     color: rgb(0, 177, 79);
+    text-decoration: none;
 }
 
 nav{
@@ -741,20 +742,36 @@ label{
     color: white;
 } */
 
+#mainContent{
+    visibility:hidden;
+}
+
+#mainContent.display{
+    visibility:visible;
+}
 
 #loading {
-    width: 1rem;
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    width: 100%;
+    /* width: 1rem;
     height: 1rem;
     border: 5px solid #f3f3f3;
     border-top: 6px solid #9c41f2;
     border-radius: 100%;
-    margin: auto;
-    visibility: hidden;
-    animation: spin 1s infinite linear;
+    margin: auto; */
+    /* visibility: hidden; */
+    /* animation: spin 1s infinite linear; */
 }
 #loading.display {
     visibility: visible;
 }
+
+#loading.hidden {
+    display: none;
+}
+
 @keyframes spin {
     from {
         transform: rotate(0deg);
