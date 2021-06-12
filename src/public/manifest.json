@@ -4,7 +4,7 @@
     "description": "Find restaurant for fill your hunger",
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#ffffff",
+    "background_color": "#d84315",
     "theme_color": "#d84315",
     "icons": [
       {
