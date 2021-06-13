@@ -596,11 +596,7 @@ footer{
     .review-box > p{
         margin-top: 16px;
         color: #828282;
-    }
-    #favorite,#favorited{
-        /* position: fixed;    
-        right:50px; */
-    }   
+    }    
 }
 
 @media (min-width: 1000px){
