@@ -45,6 +45,15 @@ const restaurantDetailTemplate = (restaurant) => `
         <div class="review">
             <div class="review-head">
                 <label for="Reviews">Customer Reviews</label>                
+            </div>
+            <div class="">
+                <form class="review-form" method="post" action=">
+                    <label for="username">Username</label>
+                    <input type="text" name="user" />
+                    <label for="review">Review</label>
+                    <textarea name="review"></textarea>
+                    <button class="btn-form">Submit Review</button>
+                </form>
             </div>            
             <div class="review-list">
                 ${restaurant.customerReviews.map((review) => `                   
@@ -57,19 +66,20 @@ const restaurantDetailTemplate = (restaurant) => `
         </div>        
 `;
 
-const jumbotronTemplate = (restaurant) => {
-  restaurant.name !== undefined
-    ? `
-    <div class="jumbotron" style="background-image: url(${CONFIG.BASE_IMAGE_URL + restaurant.pictureId})">
-        <div class="jumbo-text">${restaurant.name}</div>
-        <div class="blur"></div>
-    </div>
+const jumbotronTemplate = (restaurant) => `
+    ${restaurant.name !== undefined ? `
+        <div class="jumbotron" style="background-image: url(${CONFIG.BASE_IMAGE_URL + restaurant.pictureId})">
+            <div class="jumbo-text">${restaurant.name}</div>
+            <div class="blur"></div>
+        </div>
     ` : `
-    <div class="jumbotron" style="background-image: url('/heros/hero-image_2.jpg')">
-        <div class="jumbo-text">FIND YOUR <br> FAVORITE RESTAURANT</div>
-        <div class="blur"></div>
-    </div>`;
-};
+        <div class="jumbotron" style="background-image: url('heros/hero-image_1.jpg')">
+            <div class="jumbo-text">Find Your <br>Favorite Restaurant</div>
+            <div class="blur"></div>
+        </div>
+    `}
+    
+`;
 
 const restaurantItemTemplate = (restaurant) => `
     <div class="card">

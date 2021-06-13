@@ -28,12 +28,12 @@ const RestaurantList = {
   },
 
   async afterRender() {
-    const jumbotronContainer = document.querySelector('.jumbo');
-    jumbotronContainer.innerHTML += jumbotronTemplate;
-
     const restaurant = await RestaurantDB.restaurantList();
     console.log(restaurant);
     const restaurantContainer = document.querySelector('#list');
+
+    const jumbotronContainer = document.querySelector('.jumbo');
+    jumbotronContainer.innerHTML += jumbotronTemplate(restaurant);
 
     setTimeout(() => {
       document.querySelector('#loading').classList.add('hidden');

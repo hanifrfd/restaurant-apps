@@ -113,9 +113,9 @@ nav{
     color: #81b214;
 }
 
-*:focus {  
+/* *:focus {  
     outline: 4px solid #81b214;
-}
+} */
 
 .jumbotron {    
     overflow:hidden;
@@ -511,6 +511,7 @@ footer{
     }
     .rest-content{
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         margin-bottom: 32px;
     }
@@ -520,6 +521,7 @@ footer{
     .sub-title{
         display: flex;    
         justify-content: space-between;
+        flex-direction: row;
     }
     
     .ratings{
@@ -711,15 +713,11 @@ label{
     margin: 16px 0px;
 }
 
-/* .tambah-review{
-    cursor: pointer;
-}
-
 .review-form{
-    padding: 24px 50px;
-    width:40%;    
-    display:none;
+    padding: 0px 0px;
+    width:40%;
     flex-direction: column;
+    display: flex;
 }
 
 .flex{
@@ -736,11 +734,22 @@ label{
 }
 
 .review-form > button{
-    background-color: #81b214;
+    background-color: rgb(0, 177, 79);
+    border-radius: 100px;
     box-shadow: none;
     border: none;
     color: white;
-} */
+    padding: 10px 0px;
+    width:30%;
+}
+
+.review-form:focus {  
+    outline: none;
+}
+
+.review-form > label{
+    margin-bottom: 5px;
+}
 
 #mainContent{
     visibility:hidden;

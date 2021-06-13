@@ -25,8 +25,9 @@ const RestaurantDetail = {
 
     const restaurant = await RestaurantDB.detailRestaurant(url.id);
     console.log(restaurant);
+
     const jumbotronContainer = document.querySelector('.jumbo');
-    jumbotronContainer.innerHTML += jumbotronTemplate(restaurant);
+    jumbotronContainer.innerHTML += jumbotronTemplate(restaurant.restaurant);
 
     const restaurantContainer = document.querySelector('.restaurant');
 
