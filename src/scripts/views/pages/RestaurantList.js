@@ -4,43 +4,40 @@ import { restaurantItemTemplate, jumbotronTemplate } from '../templates/template
 
 const RestaurantList = {
 
-  async loader() {
-    return `
-      <div id="mainContent">
-        <div id="loading"></div>
-      </div>
-    `;
-  },
-
   async render() {
-    return `
-        
-        <div id="mainContent" class="display">
+    return `        
+        <div id="loading">
+              <img src="/loader.gif" width="100" height="100" alt="loader"/>
+        </div>
+        <div id="mainContent">
           <div class="jumbo"></div>
           <div class="headline">Explore Restaurant</div>                  
-          <div id="list">
-            <div id="loading">
-              <img src="/loader.gif" width="100" height="100" alt="loader"/>
-            </div>
+          <div id="list">            
           </div>
         </div>                
       `;
   },
 
   async afterRender() {
+    const jumbotronContainer = document.querySelector('.jumbo');
+    jumbotronContainer.innerHTML += jumbotronTemplate();
+
+    const restaurantContainer = document.querySelector('#list');
     const restaurant = await RestaurantDB.restaurantList();
     console.log(restaurant);
-    const restaurantContainer = document.querySelector('#list');
 
-    const jumbotronContainer = document.querySelector('.jumbo');
-    jumbotronContainer.innerHTML += jumbotronTemplate(restaurant);
-
-    setTimeout(() => {
-      document.querySelector('#loading').classList.add('hidden');
-      restaurant.restaurants.forEach((items) => {
-        restaurantContainer.innerHTML += restaurantItemTemplate(items);
-      });
-    }, 2500);
+    restaurant
+      ? setTimeout(() => {
+        document.querySelector('#loading').classList.add('hidden');
+        document.querySelector('#mainContent').classList.add('display');
+        restaurant.restaurants.forEach((items) => {
+          restaurantContainer.innerHTML += restaurantItemTemplate(items);
+        });
+      }, 1500)
+      : setTimeout(() => {
+        document.querySelector('#loading').classList.add('hidden');
+        restaurantContainer.innerHTML += 'data gagal ditemukan';
+      }, 2500);
   },
 };
 

@@ -170,6 +170,14 @@ nav{
     flex-direction: column;
     margin-bottom: 30px;
     max-width: 48%;                     
+    position: relative;
+}
+
+.cardLink{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    cursor:pointer;
 }
 
 .card > .cardInfo{
@@ -187,8 +195,8 @@ nav{
     font-weight: bold;
     text-decoration: none;
     color: inherit;
-    font-size: 1rem;
-    padding: 14.5px 4px 14.5px 4px;
+    font-size: 1rem;    
+    padding: 6px 4px;
 }
 
 .cardInfo > span:first-child{
@@ -312,7 +320,7 @@ footer{
         font-weight: bold;
         text-decoration: none;
         color: inherit;
-        padding: 10px 10px 18px 10px;
+        padding: 4px 10px 4px 10px;
     }
     footer{
         padding: 16px 110px;
@@ -405,7 +413,7 @@ footer{
     
 }
 
-.restaurant{
+.restaurant, .form-review, .review{
     padding: 0px 16px;
     margin-top: 24px;    
 }
@@ -413,7 +421,7 @@ footer{
 .rest-head{
     display:flex;
     justify-content:space-between;        
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 .rest-title{
     display: flex;
@@ -430,11 +438,11 @@ footer{
     margin-bottom: 32px;
 }
 .rest-content > .rest-info, .rest-menu {
-    width: 250px;
+    width: 100%;
 }
 .sub-title{
     display: flex;    
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
 }
 
@@ -449,6 +457,11 @@ footer{
 }
 .description{
     line-height: 2;
+}
+
+.review-container{
+    display: flex;
+    flex-direction: column;
 }
 
 .review-head{
@@ -475,8 +488,7 @@ footer{
 .review-box{
     border: 1px solid #f2f2f2;
     padding: 16px;
-    min-width: 274px;
-    max-width: 274px;      
+    width: 100%;    
     margin-bottom: 8px;
 }
 .review-box > label{
@@ -489,7 +501,18 @@ footer{
 }
 
 @media (min-width: 700px){
-    .restaurant{
+    .review-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .form-review, .review{
+        padding: 0px 0px;
+        width: 40%;
+    }
+
+    .restaurant, .review-container{
         padding: 0px 110px;
         margin-top: 48px;    
     }
@@ -500,10 +523,12 @@ footer{
         flex-direction: row;       
         margin-bottom: 48px;
     }
+
     .rest-title{
         display: flex;
         align-items: center;
     }
+
     .rest-title > .name {    
         font-size: 3rem;
         font-weight:bolder; 
@@ -539,12 +564,12 @@ footer{
     
     .review-head{
         display: flex;
-        margin-bottom: 16px;
-        margin-top: 32px;
+        margin-bottom: 16px;        
+        margin-top: 0px;
         justify-content: space-between;
     }
-    .review-head > a{
-        color: #f58634;
+    .review-head > label{
+        font-size: 1.5rem;
     }
     
     .review-list{
@@ -561,8 +586,7 @@ footer{
     .review-box{
         border: 1px solid #f2f2f2;
         padding: 16px;
-        min-width: 274px;
-        max-width: 274px;      
+        width: 100%;      
         margin-bottom: 8px;
     }
     .review-box > label{
@@ -570,12 +594,12 @@ footer{
         color: #6FCF97;    
     }
     .review-box > p{
-        margin-top: 8px;
+        margin-top: 16px;
         color: #828282;
     }
     #favorite,#favorited{
-        position: fixed;    
-        right:50px;
+        /* position: fixed;    
+        right:50px; */
     }   
 }
 
@@ -627,8 +651,7 @@ footer{
     
     .review-head{
         display: flex;
-        margin-bottom: 16px;
-        margin-top: 32px;
+        margin-bottom: 16px;        
         justify-content: space-between;
     }
     .review-head > a{
@@ -648,9 +671,7 @@ footer{
     
     .review-box{
         border: 1px solid #f2f2f2;
-        padding: 16px;
-        min-width: 274px;
-        max-width: 274px;      
+        padding: 16px;              
         margin-bottom: 8px;
     }
     .review-box > label{
@@ -661,17 +682,13 @@ footer{
         margin-top: 8px;
         color: #828282;
     }
-    #favorite,#favorited{
-        position: fixed;    
-        right:110px;
+    #favorite,#favorited{        
         padding: 14px 40px;
     }   
 }
 
 #favorite, #favorited {
-    position: fixed;
-    bottom:20px;
-    right:15px;
+    cursor: pointer;    
     padding: 10px 36px;
     border: none;
     border-radius: 100px;
@@ -686,8 +703,7 @@ footer{
 
 #favorited{    
     background-color: white;
-    color: rgb(0, 177, 79);
-    padding: 14px 40px;
+    color: rgb(0, 177, 79);    
     border: 1px solid rgb(0, 177, 79);    
 }
 
@@ -714,10 +730,10 @@ label{
 }
 
 .review-form{
-    padding: 0px 0px;
-    width:40%;
+    padding: 0px 0px;    
     flex-direction: column;
-    display: flex;
+    display: flex;    
+    margin-top: 20px;
 }
 
 .flex{
@@ -733,22 +749,35 @@ label{
     height: 100px;
 }
 
-.review-form > button{
+.review-form > .btn-form{
     background-color: rgb(0, 177, 79);
     border-radius: 100px;
     box-shadow: none;
     border: none;
     color: white;
-    padding: 10px 0px;
-    width:30%;
+    padding: 16px 52px;
+    width:auto;
+    margin-top: 16px;
+    cursor:pointer;
+    align-self: center;
+    font-weight: bold;
 }
 
 .review-form:focus {  
     outline: none;
 }
 
+.review-form > input[name="name"], textarea[name="review"]{
+    border: 1px solid #c3c3c3;
+}
+
 .review-form > label{
     margin-bottom: 5px;
+    color: #828282;
+}
+
+label[for="Reviews"]{
+    font-size: 1.4rem;
 }
 
 #mainContent{
@@ -764,14 +793,7 @@ label{
     justify-content: center;
     padding-top: 50px;
     width: 100%;
-    /* width: 1rem;
-    height: 1rem;
-    border: 5px solid #f3f3f3;
-    border-top: 6px solid #9c41f2;
-    border-radius: 100%;
-    margin: auto; */
-    /* visibility: hidden; */
-    /* animation: spin 1s infinite linear; */
+    min-height: 100vh;    
 }
 #loading.display {
     visibility: visible;
@@ -779,13 +801,4 @@ label{
 
 #loading.hidden {
     display: none;
-}
-
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
 }

@@ -5,14 +5,13 @@ import { restaurantItemTemplate, jumbotronTemplate } from '../templates/template
 const RestaurantFavorite = {
   async render() {
     return `
-        <div id="mainContent" class="display">
+        <div id="loading">
+              <img src="/loader.gif" width="100" height="100" alt="loader"/>
+        </div>            
+        <div id="mainContent">
           <div class="jumbo"></div>
           <div class="headline">Your Favorite Restaurant</div>
-          <div id="list">
-            <div id="loading">
-              <img src="/loader.gif" width="100" height="100" alt="loader"/>
-            </div>
-            <div id="error" class="hidden">Belum ada restoran favorit</div>
+          <div id="list">            
           </div>
         </div>                
       `;
@@ -23,13 +22,15 @@ const RestaurantFavorite = {
     console.log(restaurant);
     const restaurantContainer = document.querySelector('#list');
     const jumbotronContainer = document.querySelector('.jumbo');
-    jumbotronContainer.innerHTML += jumbotronTemplate;
+    jumbotronContainer.innerHTML += jumbotronTemplate();
+
     setTimeout(() => {
       document.querySelector('#loading').classList.add('hidden');
+      document.querySelector('#mainContent').classList.add('display');
       restaurant.forEach((items) => {
         restaurantContainer.innerHTML += restaurantItemTemplate(items);
       });
-    }, 2500);
+    }, 1500);
   },
 };
 

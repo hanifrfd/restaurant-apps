@@ -38,8 +38,14 @@ const CacheHelper = {
   },
 
   async _addCache(request) {
-    const cache = await this._openCache();
-    cache.add(request);
+    if (!(request.url.indexOf('http') === 0)) {
+      // skip request
+    } else if (request.method === 'POST') {
+      // skip request
+    } else {
+      const cache = await this._openCache();
+      cache.add(request);
+    }
   },
 };
 

@@ -2,12 +2,7 @@
 /* eslint-disable max-len */
 import CONFIG from '../../globals/config';
 
-const restaurantDetailTemplate = (restaurant) => `    
-        <div class="rest-head">
-            <div class="rest-title">
-                <div class="name">${restaurant.name}</div>                
-            </div>
-        </div>
+const restaurantDetailTemplate = (restaurant) => `            
         <div class="rest-content">
             <div class="rest-info">
                 <div class="sub-title">
@@ -41,33 +36,39 @@ const restaurantDetailTemplate = (restaurant) => `
                     </ul>                    
                 </div>
             </div>
-        </div>
-        <div class="review">
-            <div class="review-head">
-                <label for="Reviews">Customer Reviews</label>                
+        </div>               
+`;
+
+const reviewTemplate = (restaurant) => `    
+    <div class="review-head">
+        <label for="Reviews">Customer Reviews</label>
+    </div>    
+    <div class="review-list">
+        ${restaurant.customerReviews.reverse().map((review) => `                   
+            <div class="review-box">
+                <label>${review.name}</label>
+                <p>${review.review}</p>
             </div>
-            <div class="">
-                <form class="review-form" method="post" action=">
-                    <label for="username">Username</label>
-                    <input type="text" name="user" />
-                    <label for="review">Review</label>
-                    <textarea name="review"></textarea>
-                    <button class="btn-form">Submit Review</button>
-                </form>
-            </div>            
-            <div class="review-list">
-                ${restaurant.customerReviews.map((review) => `                   
-                    <div class="review-box">
-                        <label>${review.name}</label>
-                        <p>${review.review}</p>
-                    </div>
-                `).join('')}                
-            </div>
-        </div>        
+        `).join('')}                
+    </div>    
+`;
+
+const formReviewTemplate = (restaurant) => `
+    <div class="">
+        <label for="Reviews">Give Us Your Reviews</label>
+        <form id="form-review" class="review-form">
+            <input name="id" value="${restaurant.id}" hidden />
+            <label for="username">Username</label>
+            <input type="text" name="name" />
+            <label for="review">Review</label>
+            <textarea name="review"></textarea>
+            <input type="submit" value="Submit Review" class="btn-form" />
+        </form>
+    </div>
 `;
 
 const jumbotronTemplate = (restaurant) => `
-    ${restaurant.name !== undefined ? `
+    ${restaurant !== undefined ? `
         <div class="jumbotron" style="background-image: url(${CONFIG.BASE_IMAGE_URL + restaurant.pictureId})">
             <div class="jumbo-text">${restaurant.name}</div>
             <div class="blur"></div>
@@ -77,18 +78,18 @@ const jumbotronTemplate = (restaurant) => `
             <div class="jumbo-text">Find Your <br>Favorite Restaurant</div>
             <div class="blur"></div>
         </div>
-    `}
-    
+    `}    
 `;
 
 const restaurantItemTemplate = (restaurant) => `
     <div class="card">
+        <a href="${`/#/detail/${restaurant.id}`}" class="cardLink"></a>
         <img src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}">
         <div class="cardInfo">
             <span>${restaurant.city}</span>
             <span>${restaurant.rating}</span>
         </div>
-        <a href="${`/#/detail/${restaurant.id}`}" class="cardTitle">${restaurant.name}</a>
+        <div class="cardTitle">${restaurant.name}</div>
         <p>${restaurant.description}</p>
     </div>
 `;
@@ -106,11 +107,13 @@ const createFavdButtonTemplates = () => `
 `;
 
 const createLoader = () => `
-    <div id='loading'></div>
+    <div id="loading">
+        <img src="/loader.gif" width="100" height="100" alt="loader"/>
+    </div>
 `;
 
 export {
-  restaurantItemTemplate, jumbotronTemplate, restaurantDetailTemplate, createFavButtonTemplates, createFavdButtonTemplates, createLoader,
+  restaurantItemTemplate, jumbotronTemplate, restaurantDetailTemplate, createFavButtonTemplates, createFavdButtonTemplates, createLoader, reviewTemplate, formReviewTemplate,
 };
 
 // eslint-disable-next-line max-len
