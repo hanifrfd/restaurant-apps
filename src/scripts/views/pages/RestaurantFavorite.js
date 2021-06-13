@@ -24,12 +24,20 @@ const RestaurantFavorite = {
     const jumbotronContainer = document.querySelector('.jumbo');
     jumbotronContainer.innerHTML += jumbotronTemplate();
 
+    console.log(restaurant.length);
+
     setTimeout(() => {
       document.querySelector('#loading').classList.add('hidden');
       document.querySelector('#mainContent').classList.add('display');
-      restaurant.forEach((items) => {
-        restaurantContainer.innerHTML += restaurantItemTemplate(items);
-      });
+      restaurant.length !== 0
+        ? restaurant.forEach((items) => {
+          restaurantContainer.innerHTML += restaurantItemTemplate(items);
+        })
+        : restaurantContainer.innerHTML += `
+          <div id="loading">
+            <p>anda belum memiliki restaurant favorit</p>
+          
+          </div>`;
     }, 1500);
   },
 };
