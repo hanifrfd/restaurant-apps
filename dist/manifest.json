@@ -1,6 +1,6 @@
 {
-    "name": "Hunger Apps Lite",
-    "short_name": "Hunger Apps Lite",
+    "name": "Hungry Apps Lite",
+    "short_name": "Hungry Apps Lite",
     "description": "Find restaurant for fill your hunger",
     "start_url": "/index.html",
     "display": "standalone",
