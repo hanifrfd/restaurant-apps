@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import FavoriteRestaurantIdb from '../../data/restaurant-favorite-idb';
 import { restaurantItemTemplate, jumbotronTemplate } from '../templates/template-creator';
 
@@ -11,6 +12,7 @@ const RestaurantFavorite = {
             <div id="loading">
               <img src="/loader.gif" width="100" height="100" alt="loader"/>
             </div>
+            <div id="error" class="hidden">Belum ada restoran favorit</div>
           </div>
         </div>                
       `;

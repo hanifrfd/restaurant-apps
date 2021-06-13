@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 /* eslint-disable max-len */
 import CONFIG from '../../globals/config';
 
@@ -56,12 +57,19 @@ const restaurantDetailTemplate = (restaurant) => `
         </div>        
 `;
 
-const jumbotronTemplate = `    
+const jumbotronTemplate = (restaurant) => {
+  restaurant.name !== undefined
+    ? `
+    <div class="jumbotron" style="background-image: url(${CONFIG.BASE_IMAGE_URL + restaurant.pictureId})">
+        <div class="jumbo-text">${restaurant.name}</div>
+        <div class="blur"></div>
+    </div>
+    ` : `
     <div class="jumbotron" style="background-image: url('/heros/hero-image_2.jpg')">
         <div class="jumbo-text">FIND YOUR <br> FAVORITE RESTAURANT</div>
         <div class="blur"></div>
-    </div>
-`;
+    </div>`;
+};
 
 const restaurantItemTemplate = (restaurant) => `
     <div class="card">

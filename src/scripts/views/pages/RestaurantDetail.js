@@ -22,11 +22,11 @@ const RestaurantDetail = {
 
   async afterRender() {
     const url = UrlParser.parseActiveUrlWithoutCombiner();
-    const jumbotronContainer = document.querySelector('.jumbo');
-    jumbotronContainer.innerHTML += jumbotronTemplate;
 
     const restaurant = await RestaurantDB.detailRestaurant(url.id);
     console.log(restaurant);
+    const jumbotronContainer = document.querySelector('.jumbo');
+    jumbotronContainer.innerHTML += jumbotronTemplate(restaurant);
 
     const restaurantContainer = document.querySelector('.restaurant');
 
