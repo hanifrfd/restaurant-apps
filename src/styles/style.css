@@ -426,6 +426,7 @@ footer{
 .rest-title{
     display: flex;
     align-items: center;
+    flex: 1;
 }
 .rest-title > .name {    
     font-size: 2rem;
