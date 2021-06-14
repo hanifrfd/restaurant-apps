@@ -6,7 +6,7 @@ class RestaurantDB {
       const response = await fetch(API_ENDPOINT.RESTAURANT_LIST);
       return response.json();
     } catch (err) {
-      return err;
+      return err.message;
     }
   }
 
@@ -15,7 +15,7 @@ class RestaurantDB {
       const response = await fetch(API_ENDPOINT.DETAIL(id));
       return response.json();
     } catch (err) {
-      return err;
+      return err.message;
     }
   }
 

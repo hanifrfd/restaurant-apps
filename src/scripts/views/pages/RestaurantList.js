@@ -20,23 +20,28 @@ const RestaurantList = {
 
   async afterRender() {
     const jumbotronContainer = document.querySelector('.jumbo');
-    jumbotronContainer.innerHTML += jumbotronTemplate();
-
     const restaurantContainer = document.querySelector('#list');
     const restaurant = await RestaurantDB.restaurantList();
     console.log(restaurant);
+    console.log(restaurant.length);
 
-    restaurant
+    !restaurant.length
       ? setTimeout(() => {
         document.querySelector('#loading').classList.add('hidden');
         document.querySelector('#mainContent').classList.add('display');
+        jumbotronContainer.innerHTML += jumbotronTemplate();
         restaurant.restaurants.forEach((items) => {
           restaurantContainer.innerHTML += restaurantItemTemplate(items);
         });
       }, 1500)
       : setTimeout(() => {
         document.querySelector('#loading').classList.add('hidden');
-        restaurantContainer.innerHTML += 'data gagal ditemukan';
+        document.querySelector('#mainContent').classList.add('display');
+        document.querySelector('#mainContent').innerHTML = `
+          <div id="loading">
+            ${restaurant}
+          </div>
+        `;
       }, 2500);
   },
 };

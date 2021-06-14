@@ -36,7 +36,6 @@ const RestaurantFavorite = {
         : restaurantContainer.innerHTML += `
           <div id="loading">
             <p>anda belum memiliki restaurant favorit</p>
-          
           </div>`;
     }, 1500);
   },

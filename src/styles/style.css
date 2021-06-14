@@ -231,7 +231,7 @@ nav{
 
 
 footer{
-    margin-top: 50px;
+    /* margin-top: 20px; */
     text-align: center;
     padding: 16px 30px;
     border-top: 1px solid rgb(214, 214, 214);
@@ -778,11 +778,11 @@ label[for="Reviews"]{
 }
 
 #mainContent{
-    visibility:hidden;
+    display:none;
 }
 
 #mainContent.display{
-    visibility:visible;
+    display: block;
 }
 
 #loading {
@@ -790,7 +790,7 @@ label[for="Reviews"]{
     justify-content: center;
     padding-top: 50px;
     width: 100%;
-    min-height: 100vh;    
+    min-height: 81.5vh;    
 }
 #loading.display {
     visibility: visible;

@@ -38,12 +38,13 @@ const RestaurantDetail = {
 
     const restaurant = await RestaurantDB.detailRestaurant(url.id);
     console.log(restaurant);
+    console.log(restaurant.length);
 
     const jumbotronContainer = document.querySelector('.jumbo');
     const restaurantContainer = document.querySelector('.restaurant');
     const titleHead = document.querySelector('.name');
 
-    restaurant
+    !restaurant.length
       ? setTimeout(() => {
         document.querySelector('#loading').classList.add('hidden');
         document.querySelector('#mainContent').classList.add('display');
@@ -71,7 +72,12 @@ const RestaurantDetail = {
       }, 1500)
       : setTimeout(() => {
         document.querySelector('#loading').classList.add('hidden');
-        restaurantContainer.innerHTML += 'data gagal ditemukan';
+        document.querySelector('#mainContent').classList.add('display');
+        document.querySelector('#mainContent').innerHTML = `
+          <div id="loading">
+            ${restaurant}
+          </div>
+        `;
       }, 2500);
   },
 };
