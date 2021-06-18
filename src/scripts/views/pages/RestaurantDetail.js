@@ -69,7 +69,7 @@ const RestaurantDetail = {
           reviewContainer: document.querySelector('.review'),
           restaurants: restaurant.restaurant,
         });
-      }, 1500)
+      }, 150)
       : setTimeout(() => {
         document.querySelector('#loading').classList.add('hidden');
         document.querySelector('#mainContent').classList.add('display');
@@ -78,7 +78,7 @@ const RestaurantDetail = {
             ${restaurant}
           </div>
         `;
-      }, 2500);
+      }, 1500);
   },
 };
 

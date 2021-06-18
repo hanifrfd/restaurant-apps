@@ -70,7 +70,9 @@ nav{
 #hamburger {    
     text-decoration: none;
     color: black; 
-    padding: 14px 16px;   
+    padding: 14px 16px;
+    border: none;
+    background-color: inherit;  
 }
 
 #drawer {    
@@ -145,7 +147,7 @@ nav{
     top: 0;
     left: 0;
     z-index: 0;
-    background-color: rgba(27, 27, 27, 0.479);
+    background-color: rgba(27, 27, 27, 0.279);
 }
 
 #list{
@@ -169,7 +171,7 @@ nav{
     display: flex;
     flex-direction: column;
     margin-bottom: 30px;
-    max-width: 48%;                     
+    max-width: 100%;                     
     position: relative;
 }
 
@@ -186,8 +188,8 @@ nav{
 
 .cardInfo{
     display:flex;
-    font-size: 0.625rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 700;
     margin-top: 4px;
 }
 
@@ -195,7 +197,7 @@ nav{
     font-weight: bold;
     text-decoration: none;
     color: inherit;
-    font-size: 1rem;    
+    font-size: 1.7rem;    
     padding: 6px 4px;
 }
 
@@ -207,7 +209,7 @@ nav{
     color: #f58634;    
 }             
 .card > p{    
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 200;    
     
     text-overflow: ellipsis;    
@@ -224,7 +226,7 @@ nav{
     height:auto;
     width:100%;
     min-height: 18vh;
-    max-height: 18vh;
+    
     border-radius: 3px;
 }
 
@@ -246,8 +248,8 @@ footer{
     }
 
     nav{
-        font-size: 1rem;
-        padding: 14px 50px 14px 70px;
+        font-size: 1.2rem;
+        padding: 14px 50px 14px 30px;
     }
 
     #drawer {
@@ -514,7 +516,7 @@ footer{
     }
 
     .restaurant, .review-container{
-        padding: 0px 110px;
+        padding: 0px 30px;
         margin-top: 48px;    
     }
     
@@ -598,6 +600,11 @@ footer{
         margin-top: 16px;
         color: #828282;
     }    
+
+    .makanan, .minuman{
+        width:40%;
+        padding-left: 10%;
+    }
 }
 
 @media (min-width: 1000px){
@@ -680,17 +687,17 @@ footer{
         color: #828282;
     }
     #favorite,#favorited{        
-        padding: 14px 40px;
+        padding: 16px 40px;
     }   
 }
 
 #favorite, #favorited {
     cursor: pointer;    
-    padding: 10px 36px;
+    padding: 13.8px 36px;
     border: none;
     border-radius: 100px;
     font-weight: normal;
-    font-size: 0.8rem;
+    font-size: 1rem;
 }
 
 #favorite{
@@ -766,6 +773,7 @@ label{
 
 .review-form > input[name="name"], textarea[name="review"]{
     border: 1px solid #c3c3c3;
+    padding: 15px
 }
 
 .review-form > label{

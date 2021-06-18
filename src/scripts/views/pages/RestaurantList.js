@@ -33,7 +33,7 @@ const RestaurantList = {
         restaurant.restaurants.forEach((items) => {
           restaurantContainer.innerHTML += restaurantItemTemplate(items);
         });
-      }, 1500)
+      }, 150)
       : setTimeout(() => {
         document.querySelector('#loading').classList.add('hidden');
         document.querySelector('#mainContent').classList.add('display');
@@ -42,7 +42,7 @@ const RestaurantList = {
             ${restaurant}
           </div>
         `;
-      }, 2500);
+      }, 1500);
   },
 };
 
