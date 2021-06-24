@@ -74,7 +74,7 @@ const jumbotronTemplate = (restaurant) => `
             <div class="blur"></div>
         </div>
     ` : `
-        <div class="jumbotron" style="background-image: url('heros/hero-image_1.jpg')">
+        <div class="jumbotron" style="background-image: url('heros/hero_image_1.jpg')">
             <div class="jumbo-text">Find Your <br>Favorite Restaurant</div>
             <div class="blur"></div>
         </div>
