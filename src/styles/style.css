@@ -198,7 +198,7 @@ nav{
 }
 
 .card > .cardInfo{
-    padding: 4px 4px;    
+    padding: 8px 16px 0px 16px;    
 }
 
 .cardInfo{
@@ -213,7 +213,7 @@ nav{
     text-decoration: none;
     color: inherit;
     font-size: 1.7rem;    
-    padding: 6px 4px;
+    padding: 8px 16px 8px 16px;
 }
 
 .cardInfo > span:first-child{
@@ -229,7 +229,7 @@ nav{
     
     text-overflow: ellipsis;    
     overflow: hidden;
-    padding: 0px 4px;      
+    padding: 0px 16px;      
 
     display: -webkit-box;
     -webkit-line-clamp: 2; 
