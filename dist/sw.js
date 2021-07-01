@@ -5,6 +5,10 @@ var serviceWorkerOption = {
     "/favicon.png",
     "/loader.gif",
     "/manifest.json",
+    "/heros/hero_large.jpg",
+    "/heros/hero_large.webp",
+    "/heros/hero_small.jpg",
+    "/heros/hero_small.webp",
     "/icons/icon-128.png",
     "/icons/icon-144.png",
     "/icons/icon-152.png",
@@ -13,7 +17,6 @@ var serviceWorkerOption = {
     "/icons/icon-512.png",
     "/icons/icon-72.png",
     "/icons/icon-96.png",
-    "/heros/hero_image_1.jpg",
     "/index.html"
   ]
 };

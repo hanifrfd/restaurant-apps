@@ -69,12 +69,33 @@ const formReviewTemplate = (restaurant) => `
 
 const jumbotronTemplate = (restaurant) => `
     ${restaurant !== undefined ? `
-        <div class="jumbotron lazyload" style="background-image: url(${CONFIG.BASE_IMAGE_URL + restaurant.pictureId})">
+        <div class="jumbotron">        
+            <picture style="position: absolute; width: 100%;">                
+                <source media="(max-width: 425px)" srcset="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" type="image/jpeg">
+                <source srcset="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" type="image/jpeg">
+                <img 
+                    class="lazyload"
+                    data-src="heros/hero_large.jpg"
+                    alt=""
+                    width="100%"
+                    height="100%"></img>
+            </picture>
             <div class="jumbo-text">${restaurant.name}</div>
             <div class="blur"></div>
         </div>
     ` : `
-        <div class="jumbotron lazyload" style="background-image: url('heros/hero_image_1.jpg')">
+        <div class="jumbotron">
+            <picture style="position: absolute; width: 100%;">
+                <source media="(max-width: 425px)" srcset="heros/hero_small.webp" type="image/webp">    
+                <source media="(max-width: 425px)" srcset="heros/hero_small.jpg" type="image/jpeg">
+                <source media="(min-width: 1000px)" srcset="heros/hero_large.webp" type="image/webp">
+                <img 
+                    class="lazyload"
+                    data-src="heros/hero_large.jpg"
+                    alt=""
+                    width="100%"
+                    height="100%"></img>
+            </picture>
             <div class="jumbo-text">Find Your <br>Favorite Restaurant</div>
             <div class="blur"></div>
         </div>
@@ -84,7 +105,7 @@ const jumbotronTemplate = (restaurant) => `
 const restaurantItemTemplate = (restaurant) => `
     <div class="card">
         <a href="${`/#/detail/${restaurant.id}`}" aria-label="${restaurant.name}" class="cardLink">${restaurant.name}</a>
-        <img class="lazyload" src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" width="100%" height="100%">
+        <img class="lazyload" data-src="${CONFIG.BASE_IMAGE_URL + restaurant.pictureId}" alt="${restaurant.name}" width="100%" height="100%">
         <div class="cardInfo">
             <span>${restaurant.city}</span>
             <span>${restaurant.rating}</span>
